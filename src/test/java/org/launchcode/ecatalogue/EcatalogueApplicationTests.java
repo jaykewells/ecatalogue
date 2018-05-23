@@ -1,4 +1,4 @@
-package org.launchode.ecatalogue;
+package org.launchcode.ecatalogue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

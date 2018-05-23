@@ -3,5 +3,15 @@
 <head th:replace="fragments :: head"></head>
 <body>
 <h1 th:text="${message}"></h1>
+
+<ul th:each="field : ${fields}">
+    <li th:text="${field}"></li>
+</ul>
+<table th:each="part: ${parts}">
+    <!--TODO: Finish displaying price -->
+    <tr><td>Part Name: </td><td th:text="${part.name}"></td><td>Cost: </td><td th:text="#numbers.formatDecimal(${part.price}, 0, 'COMMA', 2, 'POINT')}"></td></tr>
+    <tr><td>Vendor: </td><td th:text="${part.vendor}"></td><td>Description: </td><td th:text="${part.description}"></td></tr>
+    <tr><td>Discipline: </td><td th:text="${part.discipline}"></td></tr>
+</table>
 </body>
 </html>
