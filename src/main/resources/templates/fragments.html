@@ -4,6 +4,13 @@
     <title>Title</title>
 </head>
 <body>
-
+<table th:fragment='part-card' th:each="part: ${parts}">
+    <tr><td>Part Name: </td><td th:text="${part.name}"></td></tr>
+    <tr><td>Price: </td><td th:text="'$' + ${part.price}"></td></tr>
+    <tr><td>Vendor: </td><td th:text="${part.vendor}"></td></tr>
+    <tr><td>Description: </td><td th:text="${part.description}"></td></tr>
+    <tr><td>Discipline: </td><td th:text="${part.discipline}"></td></tr>
+    <tr></tr>
+</table>
 </body>
 </html>

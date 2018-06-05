@@ -2,16 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body>
-<h1 th:text="${message}"></h1>
-
-<ul th:each="field : ${fields}">
-    <li th:text="${field}"></li>
-</ul>
-<table th:each="part: ${parts}">
-    <!--TODO: Finish displaying price -->
-    <tr><td>Part Name: </td><td th:text="${part.name}"></td><td>Cost: </td></tr>
-    <tr><td>Vendor: </td><td th:text="${part.vendor}"></td><td>Description: </td><td th:text="${part.description}"></td></tr>
-    <tr><td>Discipline: </td><td th:text="${part.discipline}"></td></tr>
-</table>
+<h1>Total Filtration Solutions</h1>
+<form th:action="@{/search/results}" th:object="${searchForm}">
+    <ul>
+        <li th:each="field : *{fields}">
+            <input type="radio" th:field="*{searchField}" th:value="${field}" th:checked="${field == searchField}"/>
+            <label th:text="${field.name}"></label>
+        </li>
+    </ul>
+    <input type="text" th:field="*{keyword}"/>
+    <input type="submit" value="Search"/>
+</form>
+<!-- TODO: Create Search Field-->
 </body>
 </html>

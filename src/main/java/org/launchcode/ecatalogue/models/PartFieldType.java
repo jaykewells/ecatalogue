@@ -1,11 +1,11 @@
 package org.launchcode.ecatalogue.models;
 
 public enum PartFieldType {
-
+    ALL ("All"),
     PART_NAME("Part Name"),
     VENDOR ("Vendor"),
-    DISCIPLINE ("Discipline"),
-    ALL ("All");
+    DISCIPLINE ("Discipline");
+
 
     private final String name;
 

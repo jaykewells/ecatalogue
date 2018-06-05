@@ -45,7 +45,7 @@ public class PartDataImporter {
 
                 String partNum = record.get("Item #");
                 String vendor = record.get("Vendor");
-                String partName = record.get("Part Name");
+                PartName partName = new PartName (record.get("Part Name"));
                 String discipline = record.get("Discipline");
                 String margin = record.get("Margin Factor");
                 String cost = record.get("Direct Cost");
@@ -63,6 +63,7 @@ public class PartDataImporter {
                     disc = new Discipline(discipline);
                     partData.getDisciplines().add(disc);
                 }
+
 
                 Part newPart = new Part(partName, partNum, disc, desc, vend, margin, cost);
 

@@ -39,11 +39,9 @@ public class PartData {
 
         ArrayList<Part> matchingParts = new ArrayList<>();
 
-        for(Part part : parts){
-
-            if(getFieldByType(part, column).contains(value))
+        for(Part part : parts)
+            if (getFieldByType(part, column).contains(value))
                 matchingParts.add(part);
-        }
 
         return matchingParts;
     }
@@ -54,7 +52,7 @@ public class PartData {
 
         for(Part part : parts){
 
-            if (part.getName().toLowerCase().contains(value)) {
+            if (part.getName().contains(value)) {
                 matchingParts.add(part);
                 continue;
             }
@@ -79,6 +77,9 @@ public class PartData {
                 return part.getVendor();
             case DISCIPLINE:
                 return part.getDiscipline();
+            case PART_NAME:
+                return part.getName();
+
         }
 
         throw new IllegalArgumentException("Cannot get field of type "+ type);
